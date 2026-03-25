@@ -1233,7 +1233,7 @@ If all Cisco, use __EIGRP__
 
 ## 🔀 EIGRP
 Steps in configuring EIGRP
-1. Decide on an ASN
+1. Decide on an ASN 100
 2. Determine Connected Networks
 3. Advertise
 
@@ -1546,7 +1546,8 @@ conf t
 ~~~
 !@R4
 conf t
- router ospf 1
+no router ospf 1
+router ospf 1
   router-id 4.4.4.4
   network 4.4.4.4 0.0.0.0 area 0
   network 10.1.1.8 0.0.0.3 area 0
@@ -2032,7 +2033,7 @@ conf t
 config T
  router eigrp 100
   redistribute ospf 1 metric 10000 100 255 1 1500
-  exit
+  exitsh
  router ospf 1
   redistribute eigrp 100 subnets
 end
